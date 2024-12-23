@@ -38,3 +38,7 @@ cd build
 cmake ..
 make
 ```
+### TODO
+
+- [ ] /docs/Guess_number.md
+- [ ] /docs/Go_maze.md

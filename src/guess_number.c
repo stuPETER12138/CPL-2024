@@ -5,7 +5,7 @@
 
 int main(){
     int number = 0;
-    printf("Please input the sum:");
+    printf("Please input the sum: ");
     int number_sum;
     scanf("%d", &number_sum);
     for(int a = 1; a <= 9; a++){
@@ -22,7 +22,7 @@ int main(){
     if(number == 0){
         printf("You wrong!");
     }else{
-        printf("Your number is: %d", number);
+        printf("Your number in your mind is: %d", number);
     }
     return 0;
 }
