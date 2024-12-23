@@ -27,3 +27,14 @@ char a[50][50]={"######",
 ```
 
 我的[**走迷宫实验**](./public/docs/Go_maze.md)
+
+### 使用说明
+
+```bash
+git clone git@github.com:stuPETER12138/CPL-2024.git
+cd CPL-2024
+mkdir build
+cd build
+cmake ..
+make
+```
