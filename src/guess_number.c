@@ -5,7 +5,7 @@
 
 int main(){
     int number = 0;
-    printf("请告诉我和值：");
+    printf("Please input the sum:");
     int number_sum;
     scanf("%d", &number_sum);
     for(int a = 1; a <= 9; a++){
@@ -20,9 +20,9 @@ int main(){
         }
     }
     if(number == 0){
-        printf("你算错了！");
+        printf("You wrong!");
     }else{
-        printf("你想的数是：%d", number);
+        printf("Your number is: %d", number);
     }
     return 0;
 }
