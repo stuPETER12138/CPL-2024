@@ -1,7 +1,6 @@
 //
 // Created by wu on 24-12-16.
 //
-#include <math.h>
 #include <time.h>
 #include <stdio.h>
 #include <conio.h>
@@ -54,7 +53,7 @@ int main(){
 }
 
 void set_difficulty(int *len){
-    printf("Please set the difficulty of the maze\n1\tEasy(9x9)\n2\tHard(29x29)\n3\tAsian(49x49)\nwrite the number:");
+    printf("Please set the difficulty of the maze\n1\tEasy(9x9)\n2\tmedium(19x19)\n3\tHard(29x29)\n4\tAsian(49x49)\nwrite the number:");
     int difficulty = 0;
     scanf("%d", &difficulty);
     switch (difficulty) {
@@ -62,9 +61,12 @@ void set_difficulty(int *len){
             *len = 11;
             break;
         case 2:
-            *len = 31;
+            *len = 21;
             break;
         case 3:
+            *len = 31;
+            break;
+        case 4:
             *len = 51;
             break;
         default:
@@ -142,8 +144,8 @@ void draw_maze(char **maze, const int len){
                 // set the path background color to white
                 printf("\033[47m%c\033[0m", maze[i][ii]);
             } else if (i == end_loc.x && ii == end_loc.y){
-                // set the exit background color to green
-                printf("\033[42m%c\033[0m", maze[i][ii]);
+                // set the exit background color to red
+                printf("\033[41m%c\033[0m", maze[i][ii]);
             }else if (maze[i][ii] == USER) {
                 // set the user front color to yellow
                 printf("\033[47;33m%c\033[0m", maze[i][ii]);
