@@ -53,6 +53,7 @@ int main(){
 }
 
 void set_difficulty(int *len){
+    printf("press w, a, s, d to move, and press b to quit.\n");
     printf("Please set the difficulty of the maze\n1\tEasy(9x9)\n2\tmedium(19x19)\n3\tHard(29x29)\n4\tAsian(49x49)\nwrite the number:");
     int difficulty = 0;
     scanf("%d", &difficulty);
@@ -137,16 +138,16 @@ void generate_maze(char **maze, const int len, int x, int y){
 void draw_maze(char **maze, const int len){
     for (int i = 0; i < len; i++){
         for (int ii = 0; ii < len; ii++){
-            if (maze[i][ii] == WALL) {
+            if (maze[i][ii] == WALL){
                 // set the wall background color to cyan
                 printf("\033[46m%c\033[0m", maze[i][ii]);
-            } else if (maze[i][ii] == PATH) {
+            } else if (maze[i][ii] == PATH){
                 // set the path background color to white
                 printf("\033[47m%c\033[0m", maze[i][ii]);
             } else if (i == end_loc.x && ii == end_loc.y){
                 // set the exit background color to red
                 printf("\033[41m%c\033[0m", maze[i][ii]);
-            }else if (maze[i][ii] == USER) {
+            } else if (maze[i][ii] == USER){
                 // set the user front color to yellow
                 printf("\033[47;33m%c\033[0m", maze[i][ii]);
             }
@@ -209,6 +210,9 @@ char get_key(){
         case 100:
             key = 'd';
             break;
+        case 98:
+            key = 'b';
+            break;
     }
     return key;
 }
@@ -216,6 +220,9 @@ char get_key(){
 void update_maze(char **maze, const int len){
     while(1){
         char direct = get_key();
+        if (direct == 'b'){
+            break;
+        }
         move(maze, user_loc.x, user_loc.y, direct);
         // clear the screen
         system("cls");
@@ -228,5 +235,9 @@ void update_maze(char **maze, const int len){
 }
 
 void finish_maze(){
-    printf("You win!\n");
+    if (user_loc.x == end_loc.x && user_loc.y == end_loc.y){
+        printf("You reach the end!\n");
+    } else {
+        printf("You quit!\n");
+    }
 }
