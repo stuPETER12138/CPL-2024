@@ -191,6 +191,8 @@ void move(char **maze, const int x, const int y, const char direction){
                 maze[user_loc.x][user_loc.y] = USER;
             }
             break;
+        default:
+            break;
     }
 }
 
@@ -212,6 +214,8 @@ char get_key(){
             break;
         case 98:
             key = 'b';
+            break;
+        default:
             break;
     }
     return key;
