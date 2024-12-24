@@ -149,7 +149,7 @@ void draw_maze(char **maze, const int len){
                 printf("\033[41m%c\033[0m", maze[i][ii]);
             } else if (maze[i][ii] == USER){
                 // set the user front color to yellow
-                printf("\033[47;33m%c\033[0m", maze[i][ii]);
+                printf("\033[47;30m%c\033[0m", maze[i][ii]);
             }
         }
         printf("\n");
